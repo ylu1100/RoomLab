@@ -3,11 +3,11 @@ package Rooms;
 import Game.Runner;
 import People.Person;
 
-public class Trap extends Room
+public class Trap1 extends Room
 {
 
-    public Trap (int trapx, int trapy) {
-        super(trapx, trapy);
+    public Trap1 (int trapx1, int trapy1) {
+        super(trapx1, trapy1);
 
 
 
@@ -18,7 +18,7 @@ public class Trap extends Room
      * Triggers the game ending conditions.
      * @param x the Person entering
      */
-@Override
+    @Override
     public void enterRoom(Person x) {
 
         occupant = x;

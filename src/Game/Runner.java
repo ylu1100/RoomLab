@@ -3,6 +3,8 @@ package Game;
 import People.Person;
 import Rooms.Room;
 import Rooms.Trap;
+import Rooms.Trap1;
+import Rooms.Trap2;
 import Rooms.WinningRoom;
 	
 import java.util.Scanner;
@@ -27,14 +29,26 @@ public class Runner {
 		}
 
 
-		//Create a random winning room.
+		//Create a random winning room and traps
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
 		building[x][y] = new WinningRoom(x, y);
 
-		int trapx = (int)(Math.random()*building.length);
-		int trapy = (int)(Math.random()*building.length);
-		building[trapx][trapy] = new Trap(x,y);
+		int trapx = (int) (Math.random() * building.length);
+		int trapy = (int) (Math.random() * building.length);
+		if(trapx != x) {
+			building[trapx][trapy] = new Trap(x, y);
+		}
+		int trapx1 = (int)(Math.random()*building.length);
+		int trapy1 = (int)(Math.random()*building.length);
+		if(trapx1 != x) {
+			building[trapx1][trapy1] = new Trap1(x, y);
+		}
+		int trapx2 = (int)(Math.random()*building.length);
+		int trapy2 = (int)(Math.random()*building.length);
+			if(trapx2 != x) {
+				building[trapx2][trapy2] = new Trap2(x, y);
+			}
 		 
 		 //Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
